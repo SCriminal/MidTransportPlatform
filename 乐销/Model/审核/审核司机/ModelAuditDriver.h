@@ -35,7 +35,10 @@
 @property (nonatomic, strong) NSString *cityName;
 @property (nonatomic, strong) NSString *address;
 @property (nonatomic, strong) NSString *introduce;
-
+@property (nonatomic, strong) NSString *driverAgency;
+@property (nonatomic, assign) double driverClass;
+@property (nonatomic, strong) NSString *driverPhone;
+@property (nonatomic, strong) NSString *roadTransportNumber;
 //logical
 @property (nonatomic, strong) NSString *stateShow;
 @property (nonatomic, strong) UIColor *stateColorShow;

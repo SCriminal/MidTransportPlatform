@@ -43,6 +43,20 @@ NSString *const kModelAuditCarDrivingLicenseNegativeUrl = @"drivingLicenseNegati
 NSString *const kModelAuditCarVehicleInsuranceUrl = @"vehicleInsuranceUrl";
 NSString *const kModelAuditCarVehicleTripartiteInsuranceUrl = @"vehicleTripartiteInsuranceUrl";
 
+NSString *const kModelAuditCarDrivingNumber = @"drivingNumber";
+NSString *const kModelAuditCarDrivingEndDate = @"drivingEndDate";
+NSString *const kModelAuditCarDrivingRegisterDate = @"drivingRegisterDate";
+NSString *const kModelAuditCarEnergyType = @"energyType";
+NSString *const kModelAuditCarDrivingIssueDate = @"drivingIssueDate";
+NSString *const kModelAuditCarWeight = @"weight";
+NSString *const kModelAuditCarDriving2NegativeUrl = @"driving2NegativeUrl";
+NSString *const kModelAuditCarLength = @"length";
+NSString *const kModelAuditCarGrossMass = @"grossMass";
+NSString *const kModelAuditCarHeight = @"height";
+NSString *const kModelAuditCarRoadTransportNumber = @"roadTransportNumber";
+NSString *const kModelAuditCarUseCharacter = @"useCharacter";
+NSString *const kModelAuditCarDrivingAgency = @"drivingAgency";
+NSString *const kModelAuditCarModel = @"model";
 @interface ModelAuditCar ()
 @end
 
@@ -94,106 +108,22 @@ NSString *const kModelAuditCarVehicleTripartiteInsuranceUrl = @"vehicleTripartit
             self.stateColorShow = [UIColor redColor];
             break;
     }
-    self.carTypeShow = [self getCarType:self.vehicleType];
-    self.carLengthShow = [self getCarLength:self.vehicleType];
+    self.carTypeShow = [ModelAuditCar exchangeVehicleType:NSNumber.dou(self.vehicleType).stringValue];
     self.timeShow = [GlobalMethod exchangeTimeWithStamp:self.submitTime andFormatter:TIME_SEC_SHOW];
 
 }
 
-- (NSString *)getCarType:(int)vehicleType{
-    switch (vehicleType) {
-        case 1:
-            return @"普通货车";
-        case 2:
-            return @"厢式货车";
-        case 3:
-            return @"罐式货车";
-        case 4:
-            return @"牵引车";
-        case 5:
-            return @"普通挂车";
-        case 6:
-            return @"罐式挂车";
-        case 7:
-            return @"集装箱挂车";
-        case 8:
-            return @"仓栅式货车";
-        case 9:
-            return @"封闭货车";
-        case 10:
-            return @"平板货车";
-        case 11:
-            return @"集装箱车";
-        case 12:
-            return @"自卸货车";
-        case 13:
-            return @"特殊结构货车";
-        case 14:
-            return @"专项作业车";
-        case 15:
-            return @"厢式挂车";
-        case 16:
-            return @"仓栅式挂车";
-        case 17:
-            return @"平板挂车";
-        case 18:
-            return @"自卸挂车";
-        case 19:
-            return @"专项作业挂车";
-        case 20:
-            return @"车辆运输车";
-        case 21:
-            return @"车辆运输车（单排）";
-            
++ (NSString *)exchangeVehicleType:(NSString *)identity{
+    NSString * strPath = [[NSBundle mainBundle]pathForResource:@"CarType" ofType:@"json"];
+    NSArray * ary = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:strPath] options:0 error:nil];
+    for (NSDictionary * dic in ary) {
+        if (identity.doubleValue == [dic doubleValueForKey:@"value"]) {
+            return [dic stringValueForKey:@"label"];
+        }
     }
-    return @"";
+    return nil;
 }
 
-- (NSString *)getCarLength:(int)vehicleType{
-    switch (vehicleType) {
-        case 1:
-            return @"6.8米";
-        case 2:
-            return @"6.6米";
-        case 3:
-            return @"7.8米";
-        case 4:
-            return @"9.6米";
-        case 5:
-            return @"13米";
-        case 6:
-            return @"1.8米";
-        case 7:
-            return @"2.7米";
-        case 8:
-            return @"3.8米";
-        case 9:
-            return @"4.2米";
-        case 10:
-            return @"5米";
-        case 11:
-            return @"6.2米";
-        case 12:
-            return @"7.7米";
-        case 13:
-            return @"8.2米";
-        case 14:
-            return @"8.7米";
-        case 15:
-            return @"11.7米";
-        case 16:
-            return @"12.5米";
-        case 17:
-            return @"15米";
-        case 18:
-            return @"16米";
-        case 19:
-            return @"17.5米";
-        case 20:
-            return @"11米";
-    }
-    return @"";
-}
 #pragma mark init
 + (instancetype)modelObjectWithDictionary:(NSDictionary *)dict {
     return [[self alloc] initWithDictionary:dict];
@@ -239,6 +169,21 @@ NSString *const kModelAuditCarVehicleTripartiteInsuranceUrl = @"vehicleTripartit
         self.drivingLicenseNegativeUrl = [dict stringValueForKey:kModelAuditCarDrivingLicenseNegativeUrl];
         self.vehicleInsuranceUrl = [dict stringValueForKey:kModelAuditCarVehicleInsuranceUrl];
         self.vehicleTripartiteInsuranceUrl = [dict stringValueForKey:kModelAuditCarVehicleTripartiteInsuranceUrl];
+        self.drivingNumber = [dict stringValueForKey:kModelAuditCarDrivingNumber];
+        self.drivingEndDate = [dict doubleValueForKey:kModelAuditCarDrivingEndDate];
+        self.drivingRegisterDate = [dict doubleValueForKey:kModelAuditCarDrivingRegisterDate];
+        self.energyType = [dict doubleValueForKey:kModelAuditCarEnergyType];
+        self.drivingIssueDate = [dict doubleValueForKey:kModelAuditCarDrivingIssueDate];
+        self.weight = [dict doubleValueForKey:kModelAuditCarWeight];
+        self.driving2NegativeUrl = [dict stringValueForKey:kModelAuditCarDriving2NegativeUrl];
+        self.length = [dict doubleValueForKey:kModelAuditCarLength];
+        self.grossMass = [dict doubleValueForKey:kModelAuditCarGrossMass];
+        self.height = [dict doubleValueForKey:kModelAuditCarHeight];
+        self.roadTransportNumber = [dict stringValueForKey:kModelAuditCarRoadTransportNumber];
+        self.useCharacter = [dict stringValueForKey:kModelAuditCarUseCharacter];
+        self.drivingAgency = [dict stringValueForKey:kModelAuditCarDrivingAgency];
+        self.model = [dict stringValueForKey:kModelAuditCarModel];
+
         //logical
         [self transformData];
     }
@@ -283,7 +228,20 @@ NSString *const kModelAuditCarVehicleTripartiteInsuranceUrl = @"vehicleTripartit
     [mutableDict setValue:self.drivingLicenseNegativeUrl forKey:kModelAuditCarDrivingLicenseNegativeUrl];
     [mutableDict setValue:self.vehicleInsuranceUrl forKey:kModelAuditCarVehicleInsuranceUrl];
     [mutableDict setValue:self.vehicleTripartiteInsuranceUrl forKey:kModelAuditCarVehicleTripartiteInsuranceUrl];
-    
+    [mutableDict setValue:self.drivingNumber forKey:kModelAuditCarDrivingNumber];
+       [mutableDict setValue:[NSNumber numberWithDouble:self.drivingEndDate] forKey:kModelAuditCarDrivingEndDate];
+       [mutableDict setValue:[NSNumber numberWithDouble:self.drivingRegisterDate] forKey:kModelAuditCarDrivingRegisterDate];
+       [mutableDict setValue:[NSNumber numberWithDouble:self.energyType] forKey:kModelAuditCarEnergyType];
+       [mutableDict setValue:[NSNumber numberWithDouble:self.drivingIssueDate] forKey:kModelAuditCarDrivingIssueDate];
+       [mutableDict setValue:[NSNumber numberWithDouble:self.weight] forKey:kModelAuditCarWeight];
+       [mutableDict setValue:self.driving2NegativeUrl forKey:kModelAuditCarDriving2NegativeUrl];
+       [mutableDict setValue:[NSNumber numberWithDouble:self.length] forKey:kModelAuditCarLength];
+       [mutableDict setValue:[NSNumber numberWithDouble:self.grossMass] forKey:kModelAuditCarGrossMass];
+       [mutableDict setValue:[NSNumber numberWithDouble:self.height] forKey:kModelAuditCarHeight];
+       [mutableDict setValue:self.roadTransportNumber forKey:kModelAuditCarRoadTransportNumber];
+       [mutableDict setValue:self.useCharacter forKey:kModelAuditCarUseCharacter];
+       [mutableDict setValue:self.drivingAgency forKey:kModelAuditCarDrivingAgency];
+       [mutableDict setValue:self.model forKey:kModelAuditCarModel];
     return [NSDictionary dictionaryWithDictionary:mutableDict];
 }
 

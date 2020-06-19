@@ -196,7 +196,7 @@
     [self.labelMainTitle fitTitle:[NSString stringWithFormat:@"%@",UnPackStr(model.vehicleNumber)] fixed:self.labelStatus.left - W(30) - self.colorLine.right];
     self.labelMainTitle.leftCenterY = XY(self.colorLine.right + W(20),self.labelStatus.centerY);
     
-    [self.labellSubTitle fitTitle:[NSString stringWithFormat:@"%@ %@ %@吨 %@车轴",model.carTypeShow,model.carLengthShow,NSNumber.dou(model.vehicleLoad),NSNumber.dou(model.axle)] fixed:self.viewBG.width - W(30)- self.colorLine.right];
+    [self.labellSubTitle fitTitle:[NSString stringWithFormat:@"%@ %@吨 %@车轴",model.carTypeShow,NSNumber.dou(model.vehicleLoad),NSNumber.dou(model.axle)] fixed:self.viewBG.width - W(30)- self.colorLine.right];
     self.labellSubTitle.leftTop = XY(self.labelMainTitle.left,self.labelMainTitle.bottom + W(13));
     
     

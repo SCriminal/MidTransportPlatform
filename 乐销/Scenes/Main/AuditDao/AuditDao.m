@@ -46,7 +46,7 @@
         labelSubTitle.textColor = model.color?model.color:COLOR_666;
         labelSubTitle.numberOfLines = 0;
         labelSubTitle.textAlignment = NSTextAlignmentRight;
-        [labelSubTitle fitTitle:UnPackStr(model.subTitle) variable:SCREEN_WIDTH/2.0 + W(25)];
+        [labelSubTitle fitTitle:isStr(model.subTitle)?model.subTitle:@"暂无" variable:SCREEN_WIDTH/2.0 + W(25)];
         labelSubTitle.rightTop = XY(SCREEN_WIDTH - W(15), labelTitle.top);
         [viewSuper addSubview:labelSubTitle];
         
@@ -63,15 +63,22 @@
 
 #pragma mark 刷新view
 - (void)resetViewWithAryModels:(NSArray *)aryImages{
-    self.aryImages = aryImages;
-    [self removeAllSubViews];//移除线
-    CGFloat left= W(15);
-    CGFloat y = W(25);
-    CGFloat bottom = 0;
+     [self removeAllSubViews];//移除线
+       CGFloat left= W(15);
+       CGFloat top = W(24);
+       CGFloat bottom = 0;
+       //重置视图坐标
+       NSMutableArray * aryFilterImage = [NSMutableArray array];
+       for (ModelImage * model in aryImages) {
+           if (isStr(model.url)) {
+               [aryFilterImage addObject:model];
+           }
+       }
+       self.aryImages = aryFilterImage;
     //重置视图坐标
-    for (int i = 0; i<aryImages.count; i++) {
-        ModelImage *model = aryImages[i];
-        UIImageView * iv = [[UIImageView alloc]initWithFrame:CGRectMake(left, y, W(78), W(65))];
+    for (int i = 0; i<aryFilterImage.count; i++) {
+        ModelImage *model = aryFilterImage[i];
+        UIImageView * iv = [[UIImageView alloc]initWithFrame:CGRectMake(left, top, W(78), W(65))];
         [iv sd_setImageWithURL:[NSURL URLWithString:model.url] placeholderImage:model.image];
         iv.contentMode = UIViewContentModeScaleAspectFill;
         iv.tag = i;
@@ -83,7 +90,7 @@
         bottom = iv.bottom + W(25);
         if ((i+1)%4==0) {
             left = W(15);
-            y = iv.bottom + W(11);
+            top = iv.bottom + W(11);
         }
     }
     self.height = bottom;

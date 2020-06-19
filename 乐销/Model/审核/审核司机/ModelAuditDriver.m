@@ -32,6 +32,10 @@ NSString *const kModelAuditDriverWxNumber = @"wxNumber";
 NSString *const kModelAuditDriverCityName = @"cityName";
 NSString *const kModelAuditDriverAddress = @"address";
 NSString *const kModelAuditDriverIntroduce = @"introduce";
+NSString *const kModelAuditDriverDriverAgency = @"driverAgency";
+NSString *const kModelAuditDriverDriverClass = @"driverClass";
+NSString *const kModelAuditDriverDriverPhone = @"driverPhone";
+NSString *const kModelAuditDriverRoadTransportNumber = @"roadTransportNumber";
 
 
 @interface ModelAuditDriver ()
@@ -127,6 +131,10 @@ NSString *const kModelAuditDriverIntroduce = @"introduce";
             self.cityName = [dict stringValueForKey:kModelAuditDriverCityName];
             self.address = [dict stringValueForKey:kModelAuditDriverAddress];
             self.introduce = [dict stringValueForKey:kModelAuditDriverIntroduce];
+        self.driverAgency = [dict stringValueForKey:kModelAuditDriverDriverAgency];
+                   self.driverClass = [dict doubleValueForKey:kModelAuditDriverDriverClass];
+                   self.driverPhone = [dict stringValueForKey:kModelAuditDriverDriverPhone];
+                   self.roadTransportNumber = [dict stringValueForKey:kModelAuditDriverRoadTransportNumber];
         //logical
         [self transformData];
     }
@@ -161,7 +169,10 @@ NSString *const kModelAuditDriverIntroduce = @"introduce";
     [mutableDict setValue:self.cityName forKey:kModelAuditDriverCityName];
     [mutableDict setValue:self.address forKey:kModelAuditDriverAddress];
     [mutableDict setValue:self.introduce forKey:kModelAuditDriverIntroduce];
-
+    [mutableDict setValue:self.driverAgency forKey:kModelAuditDriverDriverAgency];
+       [mutableDict setValue:[NSNumber numberWithDouble:self.driverClass] forKey:kModelAuditDriverDriverClass];
+       [mutableDict setValue:self.driverPhone forKey:kModelAuditDriverDriverPhone];
+       [mutableDict setValue:self.roadTransportNumber forKey:kModelAuditDriverRoadTransportNumber];
     return [NSDictionary dictionaryWithDictionary:mutableDict];
 }
 

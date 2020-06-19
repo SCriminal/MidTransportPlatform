@@ -247,6 +247,9 @@
 		D2CF190D22548EF800542AEF /* OAuth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2CF190422548EF800542AEF /* OAuth.framework */; };
 		D2CF190E22548EF800542AEF /* EAccountApiSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2CF190522548EF800542AEF /* EAccountApiSDK.framework */; };
 		D2D089111E0E22D900BE1E4C /* PlaceHolderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D089101E0E22D900BE1E4C /* PlaceHolderTextView.m */; };
+		D2D55001249C50A900F2B0FD /* CarType.json in Resources */ = {isa = PBXBuildFile; fileRef = D2D54FFE249C50A900F2B0FD /* CarType.json */; };
+		D2D55002249C50A900F2B0FD /* EnergyType.json in Resources */ = {isa = PBXBuildFile; fileRef = D2D54FFF249C50A900F2B0FD /* EnergyType.json */; };
+		D2D55003249C50A900F2B0FD /* LicenseType.json in Resources */ = {isa = PBXBuildFile; fileRef = D2D55000249C50A900F2B0FD /* LicenseType.json */; };
 		D2D6D9AD21AFD623005A4F5B /* LeftMenuVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D6D9AC21AFD623005A4F5B /* LeftMenuVC.m */; };
 		D2D871072338C8D700F79173 /* ModelBank.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D871052338C8D700F79173 /* ModelBank.m */; };
 		D2D9A41A2015D2180025963B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D9A4192015D2170025963B /* AppDelegate.m */; };
@@ -805,6 +808,9 @@
 		D2CF190522548EF800542AEF /* EAccountApiSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = EAccountApiSDK.framework; sourceTree = "<group>"; };
 		D2D0890F1E0E22D900BE1E4C /* PlaceHolderTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceHolderTextView.h; sourceTree = "<group>"; };
 		D2D089101E0E22D900BE1E4C /* PlaceHolderTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceHolderTextView.m; sourceTree = "<group>"; };
+		D2D54FFE249C50A900F2B0FD /* CarType.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CarType.json; sourceTree = "<group>"; };
+		D2D54FFF249C50A900F2B0FD /* EnergyType.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = EnergyType.json; sourceTree = "<group>"; };
+		D2D55000249C50A900F2B0FD /* LicenseType.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LicenseType.json; sourceTree = "<group>"; };
 		D2D6D9AB21AFD623005A4F5B /* LeftMenuVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LeftMenuVC.h; sourceTree = "<group>"; };
 		D2D6D9AC21AFD623005A4F5B /* LeftMenuVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LeftMenuVC.m; sourceTree = "<group>"; };
 		D2D871052338C8D700F79173 /* ModelBank.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelBank.m; sourceTree = "<group>"; };
@@ -1911,6 +1917,9 @@
 		D2A0D11323B5DAC50097D3A2 /* AuditCarDetail */ = {
 			isa = PBXGroup;
 			children = (
+				D2D54FFE249C50A900F2B0FD /* CarType.json */,
+				D2D54FFF249C50A900F2B0FD /* EnergyType.json */,
+				D2D55000249C50A900F2B0FD /* LicenseType.json */,
 				D2A0D11723B5DAC50097D3A2 /* AuditCarDetailVC.h */,
 				D2A0D11423B5DAC50097D3A2 /* AuditCarDetailVC.m */,
 				D2A0D11623B5DAC50097D3A2 /* AuditCarDetailView.h */,
@@ -2784,6 +2793,7 @@
 				D2BC9A881DFFA75600B0468E /* allCitiesDics.plist in Resources */,
 				D2821CC1218AD9B90057688B /* point.png in Resources */,
 				D2B1040B22EADE40002D9BFF /* TestDate.json in Resources */,
+				D2D55003249C50A900F2B0FD /* LicenseType.json in Resources */,
 				D2CF190C22548EF800542AEF /* HTMLResource.bundle in Resources */,
 				D2821CC0218AD9B90057688B /* circle.png in Resources */,
 				D25F55D92178801000FD4898 /* 闪屏.m4v in Resources */,
@@ -2800,7 +2810,9 @@
 				D2F733B41E8642EE0008E561 /* LocalData.json in Resources */,
 				DAA3C9E71D668FF6009CFDF7 /* Images.xcassets in Resources */,
 				D2726BA721BE04DA006B626F /* AliyunEmasServices-Info.plist in Resources */,
+				D2D55002249C50A900F2B0FD /* EnergyType.json in Resources */,
 				DAAEC65E1E5E900E0034AED0 /* area.plist in Resources */,
+				D2D55001249C50A900F2B0FD /* CarType.json in Resources */,
 				D2BC9A871DFFA75600B0468E /* allCities.plist in Resources */,
 				D26F088820D7442B00B258B0 /* LocalData_OrderDetail_WaitSend.json in Resources */,
 				D2CF190B22548EF800542AEF /* uni_account_login_sdk_res.bundle in Resources */,

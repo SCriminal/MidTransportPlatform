@@ -80,57 +80,69 @@
         ModelAuditCar * modelDetail = [ModelAuditCar modelObjectWithDictionary:response];
         [self.bottomView resetViewWithAryModels:@[^(){
             ModelImage * model = [ModelImage new];
-            model.desc = @"行驶证正面";
+            model.desc = @"行驶证主页";
             model.url = modelDetail.drivingLicenseFrontUrl;
             model.image = [BaseImage imageWithImage:[UIImage imageNamed:IMAGE_BIG_DEFAULT] url:[NSURL URLWithString:model.url]];
+            
+            
             return model;
         }(),^(){
             ModelImage * model = [ModelImage new];
-            model.desc = @"行驶证反面";
+            model.desc = @"行驶证副页";
+            
             model.url = modelDetail.drivingLicenseNegativeUrl;
             model.image = [BaseImage imageWithImage:[UIImage imageNamed:IMAGE_BIG_DEFAULT] url:[NSURL URLWithString:model.url]];
+            
             return model;
         }(),^(){
             ModelImage * model = [ModelImage new];
             model.desc = @"车辆交强险保单";
             model.url = modelDetail.vehicleInsuranceUrl;
             model.image = [BaseImage imageWithImage:[UIImage imageNamed:IMAGE_BIG_DEFAULT] url:[NSURL URLWithString:model.url]];
+            
+            
             return model;
         }(),^(){
             ModelImage * model = [ModelImage new];
             model.desc = @"车辆三者险保单";
             model.url = modelDetail.vehicleTripartiteInsuranceUrl;
             model.image = [BaseImage imageWithImage:[UIImage imageNamed:IMAGE_BIG_DEFAULT] url:[NSURL URLWithString:model.url]];
+            
             return model;
         }(),^(){
             ModelImage * model = [ModelImage new];
             model.desc = @"挂车交强险保单";
             model.url = modelDetail.trailerInsuranceUrl;
             model.image = [BaseImage imageWithImage:[UIImage imageNamed:IMAGE_BIG_DEFAULT] url:[NSURL URLWithString:model.url]];
+            
             return model;
         }(),^(){
             ModelImage * model = [ModelImage new];
             model.desc = @"挂车三者险保单";
             model.url = modelDetail.trailerTripartiteInsuranceUrl;
             model.image = [BaseImage imageWithImage:[UIImage imageNamed:IMAGE_BIG_DEFAULT] url:[NSURL URLWithString:model.url]];
+            
             return model;
         }(),^(){
             ModelImage * model = [ModelImage new];
             model.desc = @"挂车箱货险保单";
             model.url = modelDetail.trailerGoodsInsuranceUrl;
             model.image = [BaseImage imageWithImage:[UIImage imageNamed:IMAGE_BIG_DEFAULT] url:[NSURL URLWithString:model.url]];
+            
             return model;
         }(),^(){
             ModelImage * model = [ModelImage new];
-            model.desc = @"车辆照片";
+            model.desc = @"行驶证机动车相片页";
             model.url = modelDetail.vehiclePhotoUrl;
             model.image = [BaseImage imageWithImage:[UIImage imageNamed:IMAGE_BIG_DEFAULT] url:[NSURL URLWithString:model.url]];
+            
             return model;
         }(),^(){
             ModelImage * model = [ModelImage new];
             model.desc = @"道路运输许可证";
             model.url = modelDetail.managementLicenseUrl;
             model.image = [BaseImage imageWithImage:[UIImage imageNamed:IMAGE_BIG_DEFAULT] url:[NSURL URLWithString:model.url]];
+            
             return model;
         }()]];
 //        self.tableView.tableFooterView = self.bottomView;
