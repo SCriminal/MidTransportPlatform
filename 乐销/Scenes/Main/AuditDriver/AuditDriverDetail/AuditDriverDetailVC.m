@@ -121,7 +121,7 @@
         }(),^(){
             ModelImage * model = [ModelImage new];
             model.desc = @"人车照";
-            model.url = [response stringValueForKey:@"vehicleUrl"];
+            model.url = [response stringValueForKey:@"driverVehicleUrl"];
             model.image = [BaseImage imageWithImage:[UIImage imageNamed:IMAGE_BIG_DEFAULT] url:[NSURL URLWithString:model.url]];
             
             return model;
