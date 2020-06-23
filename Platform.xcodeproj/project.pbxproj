@@ -264,6 +264,7 @@
 		D2E4837B1E5ABCF100D91AAD /* UINavigationController+EndEditing.m in Sources */ = {isa = PBXBuildFile; fileRef = D2E4837A1E5ABCF100D91AAD /* UINavigationController+EndEditing.m */; };
 		D2E50D0A1E319E650045AD3F /* BaseVC+KeyboardObserve.m in Sources */ = {isa = PBXBuildFile; fileRef = D2E50D091E319E650045AD3F /* BaseVC+KeyboardObserve.m */; };
 		D2F11C6D2097103600F18CBD /* UITextField+Text.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F11C6C2097103600F18CBD /* UITextField+Text.m */; };
+		D2F4747524A1F32E003B30C5 /* AuditDriverListManagementView.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F4747424A1F32E003B30C5 /* AuditDriverListManagementView.m */; };
 		D2F733B41E8642EE0008E561 /* LocalData.json in Resources */ = {isa = PBXBuildFile; fileRef = D2F733B31E8642EE0008E561 /* LocalData.json */; };
 		D2F8473D21B1101E00833C56 /* LeftMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F8473C21B1101E00833C56 /* LeftMenuCell.m */; };
 		D2FD667620D254930048D351 /* module.plist in Resources */ = {isa = PBXBuildFile; fileRef = D2FD667520D254920048D351 /* module.plist */; };
@@ -838,6 +839,8 @@
 		D2E50D091E319E650045AD3F /* BaseVC+KeyboardObserve.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BaseVC+KeyboardObserve.m"; sourceTree = "<group>"; };
 		D2F11C6B2097103600F18CBD /* UITextField+Text.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITextField+Text.h"; sourceTree = "<group>"; };
 		D2F11C6C2097103600F18CBD /* UITextField+Text.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITextField+Text.m"; sourceTree = "<group>"; };
+		D2F4747324A1F32E003B30C5 /* AuditDriverListManagementView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AuditDriverListManagementView.h; sourceTree = "<group>"; };
+		D2F4747424A1F32E003B30C5 /* AuditDriverListManagementView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AuditDriverListManagementView.m; sourceTree = "<group>"; };
 		D2F733B31E8642EE0008E561 /* LocalData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LocalData.json; sourceTree = "<group>"; };
 		D2F8473B21B1101E00833C56 /* LeftMenuCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LeftMenuCell.h; sourceTree = "<group>"; };
 		D2F8473C21B1101E00833C56 /* LeftMenuCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LeftMenuCell.m; sourceTree = "<group>"; };
@@ -1854,6 +1857,8 @@
 				D2A0D11D23B5F07D0097D3A2 /* AuditDriverDetail */,
 				D2A0D0FD23B5A5F90097D3A2 /* AuditDriverListManagementVC.h */,
 				D2A0D0FE23B5A5F90097D3A2 /* AuditDriverListManagementVC.m */,
+				D2F4747324A1F32E003B30C5 /* AuditDriverListManagementView.h */,
+				D2F4747424A1F32E003B30C5 /* AuditDriverListManagementView.m */,
 				D2A0D10023B5A60B0097D3A2 /* AuditDriverListVC.h */,
 				D2A0D10123B5A60B0097D3A2 /* AuditDriverListVC.m */,
 				D2A0D10323B5A6210097D3A2 /* AuditDriverListCell.h */,
@@ -3072,6 +3077,7 @@
 				D2ACCC2121DC8E4600F39E28 /* ModelAps.m in Sources */,
 				D216F5401E56AB9800E11ED2 /* NSMutableArray+Safe.m in Sources */,
 				D2A0D11923B5DAC50097D3A2 /* AuditCarDetailView.m in Sources */,
+				D2F4747524A1F32E003B30C5 /* AuditDriverListManagementView.m in Sources */,
 				D23D90C71F8B245A00489F95 /* UIViewController+Category.m in Sources */,
 				D22A85BF1E2A16AF003CEB0A /* GlobalMethod+LocalDatas.m in Sources */,
 				D2BC9AC81DFFFA3A00B0468E /* BaseVC.m in Sources */,

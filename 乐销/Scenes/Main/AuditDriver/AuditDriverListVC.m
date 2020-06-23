@@ -75,7 +75,7 @@
 }
 #pragma mark request
 - (void)requestList{
-    [RequestApi requestAuditDriverListWithQualificationState:self.qualificationStates page:self.pageNum count:50 delegate:self success:^(NSDictionary * _Nonnull response, id  _Nonnull mark) {
+    [RequestApi requestAuditDriverListWithQualificationState:self.qualificationStates page:self.pageNum count:50 realName:self.driverName delegate:self success:^(NSDictionary * _Nonnull response, id  _Nonnull mark) {
         self.pageNum ++;
         NSMutableArray  * aryRequest = [GlobalMethod exchangeDic:response toAryWithModelName:@"ModelAuditDriver"];
         if (self.isRemoveAll) {

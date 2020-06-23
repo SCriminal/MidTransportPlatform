@@ -11,19 +11,35 @@
 #import "SliderView.h"
 //sub Vc
 #import "AuditDriverListVC.h"
+#import "AuditDriverListManagementView.h"
 
 @interface AuditDriverListManagementVC ()<SliderViewDelegate,UIScrollViewDelegate>
 @property (strong, nonatomic) SliderView *sliderView;
 @property (nonatomic, strong) UIScrollView *scAll;
 @property (nonatomic, strong) NSArray *arySliderDatas;
+@property (nonatomic, strong) AuditDriverListManagementNavView *navSearch;
 
 @end
 
 @implementation AuditDriverListManagementVC
 #pragma mark lazy init
+- (AuditDriverListManagementNavView *)navSearch{
+    if (!_navSearch) {
+        _navSearch = [AuditDriverListManagementNavView new];
+        _navSearch.top = NAVIGATIONBAR_HEIGHT;
+        WEAKSELF
+        _navSearch.blockSearch = ^(NSString *driverName) {
+            for (AuditDriverListVC * vc in weakSelf.childViewControllers) {
+                vc.driverName = driverName;
+                [vc refreshHeaderAll];
+            }
+        };
+    }
+    return _navSearch;
+}
 - (UIScrollView *)scAll{
     if (_scAll == nil) {
-        _scAll = [[UIScrollView alloc]initWithFrame:CGRectMake(0, self.sliderView.bottom +1, SCREEN_WIDTH, SCREEN_HEIGHT - self.sliderView.height-NAVIGATIONBAR_HEIGHT)];
+        _scAll = [[UIScrollView alloc]initWithFrame:CGRectMake(0, self.sliderView.bottom +1, SCREEN_WIDTH, SCREEN_HEIGHT - self.sliderView.bottom)];
         _scAll.contentSize = CGSizeMake(SCREEN_WIDTH * self.arySliderDatas.count, 0);
         _scAll.backgroundColor = [UIColor clearColor];
         _scAll.delegate = self;
@@ -64,7 +80,7 @@
     if (_sliderView == nil) {
         _sliderView = ^(){
             SliderView * sliderView = [SliderView new];
-            sliderView.frame = CGRectMake(0, NAVIGATIONBAR_HEIGHT, SCREEN_WIDTH, W(50));
+            sliderView.frame = CGRectMake(0, self.navSearch.bottom, SCREEN_WIDTH, W(50));
             sliderView.isHasSlider = true;
             sliderView.isScroll = false;
             sliderView.viewSlidColor = [UIColor colorWithHexString:@"4E4745"];
@@ -92,6 +108,7 @@
         return iv;
     }()];
     [self addNav];
+    [self.view addSubview:self.navSearch];
     [self.view addSubview:self.sliderView];
     [self.view addSubview:self.scAll];
     [self setupChildVC];

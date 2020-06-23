@@ -154,10 +154,12 @@
 +(void)requestAuditDriverListWithQualificationState:(double)reviewStatus
                                                page:(double)page
                                               count:(double)count
+                                           realName:(NSString *)realName
                                            delegate:(id <RequestDelegate>)delegate
                                             success:(void (^)(NSDictionary * response, id mark))success
                                             failure:(void (^)(NSString * errorStr, id mark))failure{
     NSDictionary *dic = @{@"reviewStatus":NSNumber.dou(reviewStatus),
+                          @"realName":RequestStrKey(realName),
                           @"page":NSNumber.dou(page),
                           @"count":NSNumber.dou(count)};
     [self getUrl:@"/ums/user/platform/review/list" delegate:delegate parameters:dic success:success failure:failure];

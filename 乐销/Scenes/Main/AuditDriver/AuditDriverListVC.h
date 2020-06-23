@@ -10,5 +10,6 @@
 
 @interface AuditDriverListVC : BaseTableVC
 @property (nonatomic, assign) int qualificationStates;
+@property (nonatomic, strong) NSString *driverName;
 
 @end
