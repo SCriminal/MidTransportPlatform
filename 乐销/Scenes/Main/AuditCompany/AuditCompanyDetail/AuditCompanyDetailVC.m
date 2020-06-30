@@ -81,33 +81,33 @@
                     ModelImage * model = [ModelImage new];
                     model.desc =@"营业执照";
                     model.url = [response stringValueForKey:@"businessLicenseUrl"];
-                    model.image = [BaseImage imageWithImage:[UIImage imageNamed:IMAGE_BIG_DEFAULT] url:nil];
+                    model.image = [BaseImage imageWithImage:[UIImage imageNamed:IMAGE_BIG_DEFAULT] url:[NSURL URLWithString:model.url]];
                     
                     return model;
                 }() ,^(){
                     ModelImage * model = [ModelImage new];
                     model.desc =@"道路运输许可证";
                     model.url = [response stringValueForKey:@"managementLicenseUrl"];
-                    model.image = [BaseImage imageWithImage:[UIImage imageNamed:IMAGE_BIG_DEFAULT] url:nil];
+                    model.image = [BaseImage imageWithImage:[UIImage imageNamed:IMAGE_BIG_DEFAULT] url:[NSURL URLWithString:model.url]];
                     
                     return model;
                 }(),^(){
                     ModelImage * model = [ModelImage new];
                     model.desc =@"法人身份证人像面";
                     model.url = [response stringValueForKey:@"idCardFrontUrl"];
-                    model.image = [BaseImage imageWithImage:[UIImage imageNamed:IMAGE_BIG_DEFAULT] url:nil];
+                    model.image = [BaseImage imageWithImage:[UIImage imageNamed:IMAGE_BIG_DEFAULT] url:[NSURL URLWithString:model.url]];
                     return model;
                 }(),^(){
                     ModelImage * model = [ModelImage new];
                     model.desc =@"法人身份证国徽面";
                     model.url = [response stringValueForKey:@"idCardNegativeUrl"];
-                    model.image = [BaseImage imageWithImage:[UIImage imageNamed:IMAGE_BIG_DEFAULT] url:nil];
+                    model.image = [BaseImage imageWithImage:[UIImage imageNamed:IMAGE_BIG_DEFAULT] url:[NSURL URLWithString:model.url]];
                     return model;
                 }(),^(){
                     ModelImage * model = [ModelImage new];
                     model.desc =@"企业LOGO";
                     model.url = self.modelCompany.logoUrl;
-                    model.image = [BaseImage imageWithImage:[UIImage imageNamed:IMAGE_BIG_DEFAULT] url:nil];
+                    model.image = [BaseImage imageWithImage:[UIImage imageNamed:IMAGE_BIG_DEFAULT] url:[NSURL URLWithString:model.url]];
                     return model;
                 }()]];
             }
@@ -118,25 +118,25 @@
                         ModelImage * model = [ModelImage new];
                         model.desc = @"身份证人像面";
                         model.url = [response stringValueForKey:@"idCardFrontUrl"];
-                        model.image = [BaseImage imageWithImage:[UIImage imageNamed:IMAGE_BIG_DEFAULT] url:nil];
+                        model.image = [BaseImage imageWithImage:[UIImage imageNamed:IMAGE_BIG_DEFAULT] url:[NSURL URLWithString:model.url]];
                         return model;
                     }(),^(){
                         ModelImage * model = [ModelImage new];
                         model.desc = @"身份证国徽面";
                         model.url = [response stringValueForKey:@"idCardNegativeUrl"];
-                        model.image = [BaseImage imageWithImage:[UIImage imageNamed:IMAGE_BIG_DEFAULT] url:nil];
+                        model.image = [BaseImage imageWithImage:[UIImage imageNamed:IMAGE_BIG_DEFAULT] url:[NSURL URLWithString:model.url]];
                         return model;
                     }(),^(){
                         ModelImage * model = [ModelImage new];
                         model.desc = @"手持身份证人像面";
                         model.url = [response stringValueForKey:@"idCardHandheldUrl"];
-                        model.image = [BaseImage imageWithImage:[UIImage imageNamed:IMAGE_BIG_DEFAULT] url:nil];
+                        model.image = [BaseImage imageWithImage:[UIImage imageNamed:IMAGE_BIG_DEFAULT] url:[NSURL URLWithString:model.url]];
                         return model;
                     }(),^(){
                         ModelImage * model = [ModelImage new];
                         model.desc = @"驾驶证";
-                        model.image = [BaseImage imageWithImage:[UIImage imageNamed:IMAGE_BIG_DEFAULT] url:nil];
                         model.url = [response stringValueForKey:@"driverLicenseUrl"];
+                        model.image = [BaseImage imageWithImage:[UIImage imageNamed:IMAGE_BIG_DEFAULT] url:[NSURL URLWithString:model.url]];
                         return model;
                     }()]];
                 }
