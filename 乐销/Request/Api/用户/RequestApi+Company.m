@@ -190,7 +190,7 @@
                           @"idNumber":RequestStrKey(idNumber),
                           @"remark":RequestStrKey(remark)
                           };
-    [self patchUrl:@"/ums/user/platform/status/review/{id}" delegate:delegate parameters:dic success:success failure:failure];
+    [self patchUrl:@"/admin/driver/1_0_115/review/{id}" delegate:delegate parameters:dic success:success failure:failure];
 }
 
 
