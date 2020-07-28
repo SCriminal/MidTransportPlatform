@@ -33,6 +33,5 @@
 //ary to section ary
 + (NSMutableArray *)exchangeAryToSectionWithAlpha:(NSArray *)aryResponse keyPath:(NSString *)keyPath;
 
-//转化车辆类型
-+ (NSString *)exchangeCarType:(double)typeId;
+
 @end
