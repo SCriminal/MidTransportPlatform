@@ -19,7 +19,7 @@
 //#define URL_SHARE @"https://www.zhongcheyun.cn"//
 #else
 #define URL_HEAD  @"https://api.zhongcheyun.cn"//外网
-#define URL_IMAGE @"http://img.zhongcheyun.cn"//阿里云
+#define URL_IMAGE @"https://img.zhongcheyun.cn"//阿里云
 #define URL_SHARE @"https://www.zhongcheyun.cn"//
 
 #endif
